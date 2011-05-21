@@ -99,11 +99,7 @@ define ->
         show: ->
             ###* Shows your value with canonical units.
             TODO: convert to the original units if they are available ###
-            string = @canonical_value
-            units = show_units(@dimensions)
-            if units
-                string += " #{units}"
-            string
+            "#{@canonical_value}#{show_units(@dimensions)}"
 
         add: (unit) ->
             ###* Adds a value to another value.  Both must be units with the same dimensions ###
@@ -129,7 +125,7 @@ define ->
             unit = cast_to_unit(unit)
             new_dimensions = {}
             for key of unit_conversions
-                new_dimensions[key] = @dimensions[key] - unit.dimensions[key]
+                new_dimensions[key] = @dimensions[key] + unit.dimensions[key]
             new Unit null, null, @canonical_value * unit.canonical_value, new_dimensions
 
         divide: (unit) ->
@@ -147,7 +143,7 @@ define ->
         ### So you don't have to say 'new' all the time ###
         new Unit arguments...
 
-    window.parse_units = parse_units
-    window.show_units = show_units
-    window.Unit = unit_maker
-    window.unit_class = Unit
+    parse_units:parse_units
+    show_units:show_units
+    Unit:unit_maker
+    unit_class:Unit
