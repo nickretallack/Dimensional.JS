@@ -28,3 +28,10 @@ define
             hr:60*60
             day:60*60*24
             year:60*60*24*365.25
+
+    mass:
+        canonical:'g'
+        conversions:
+            kg:1000
+            g:1
+            lb:453.59237

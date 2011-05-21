@@ -13,4 +13,5 @@ require([
     say("5m/s * 52s = " + Unit(5,'m/s').times(Unit(52,'s')).show())
     say("1/(25m/s^2) = " + Unit(25,'m/s^').reciprocal().show())
     say("0.1mi + 5ft + 20in + 300cm = " + Unit(0.1,'mi').plus(Unit(5,'ft')).plus(Unit(20,'in')).plus(Unit(300,'cm')).show())
+    say("5kg * 2m + 5lb ft = " + Unit(5,'kg').times(Unit(2,'m')).plus(Unit(12,'lb ft')).show())
 })
