@@ -1,8 +1,8 @@
-define ['cs!dimensions'], (dimensions) ->
+define ['cs!dimensions'], (dimension_definitions) ->
 
     # Make an index from units to their dimension and conversion
     unit_definitions = {}
-    for dimension, attributes of dimensions
+    for dimension, attributes of dimension_definitions
         for unit, value of attributes.conversions
             unit_definitions[unit] = 
                 dimension:dimension
@@ -11,7 +11,7 @@ define ['cs!dimensions'], (dimensions) ->
     make_dimensions = ->
         ###* Creates a fresh dimensions object, with zeroes for the exponents on each dimension type. ###
         dimensions = {}
-        for key of dimensions
+        for key of dimension_definitions
             dimensions[key] = 0
         return dimensions
 
@@ -41,7 +41,7 @@ define ['cs!dimensions'], (dimensions) ->
 
     show_single_unit = (dimension, exponent) ->
         ###* Shows the canonical unit for a given dimension, with an exponent ###
-        string = dimensions[dimension].canonical
+        string = dimension_definitions[dimension].canonical
         if exponent isnt 1
             string += "^#{exponent}"
         string
@@ -105,7 +105,7 @@ define ['cs!dimensions'], (dimensions) ->
             # TODO: figure out new preferred units
             unit = cast_to_unit(unit)
             new_dimensions = {}
-            for key of dimensions
+            for key of dimension_definitions
                 new_dimensions[key] = @dimensions[key] + unit.dimensions[key]
             new Unit null, null, @canonical_value * unit.canonical_value, new_dimensions
 
