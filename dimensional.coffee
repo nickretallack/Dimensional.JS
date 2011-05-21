@@ -1,25 +1,8 @@
-define ->
-    canonical_units =
-        space:'m'
-        time:'s'
+define ['cs!conversions'], (conversions) ->
+    canonical_units = conversions.canonical_units
+    unit_conversions = conversions.unit_conversions
 
-    # TODO: make other units reference the canonical one, so it's more flexible
-    unit_conversions = 
-        space:
-            km:1000
-            m:1
-            cm:1/100
-            mm:1/1000
-            #ft:
-            #in:
-        time:
-            ms:1/1000
-            s:1
-            min:60
-            hr:60*60
-            day:24*60*60
-
-    # Makes a reverse index on the table above
+    # Makes a reverse index on the conversion table
     unit_definitions = {}
     for dimension, units of unit_conversions
         for unit, value of units

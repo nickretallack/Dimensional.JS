@@ -1,0 +1,18 @@
+define
+    canonical_units:
+        space:'m'
+        time:'s'
+    unit_conversions:
+        space:
+            km:1000
+            m:1
+            cm:1/100
+            mm:1/1000
+            #ft:
+            #in:
+        time:
+            ms:1/1000
+            s:1
+            min:60
+            hr:60*60
+            day:24*60*60
