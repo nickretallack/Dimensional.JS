@@ -14,3 +14,8 @@ Extensible
 ----------
 
 It works with whatever units and dimensions are specified in conversions.coffee.  Feel free to add your own, like grams (mass), bytes (digital_space), hertz (cycles), degrees celsius (temperature), etc.  I'll add more soon too.  Unfortunately, there's no support yet for aggregate units like liters that express several dimensions at once.  If you can find a good way to support these, please fork and do so!
+
+Accuracy
+--------
+
+Nope, it's not very accurate.  The conversion factors could use more decimal places, and you may lose accuracy due to floating point.  I just hacked this thing together in a day, so don't take its answers as the word of god.  If you know how to improve the accuracy, by all means chip in.
