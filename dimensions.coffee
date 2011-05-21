@@ -1,9 +1,7 @@
 define
-    canonical_units:
-        space:'m'
-        time:'s'
-    unit_conversions:
-        space:
+    space:
+        canonical:'m'
+        conversions:
             km:1000
             m:1
             cm:1/100
@@ -21,7 +19,9 @@ define
             li:20.12
             ch:2011.68
 
-        time:
+    time:
+        canonical:'s'
+        conversions:
             ms:1/1000
             s:1
             min:60

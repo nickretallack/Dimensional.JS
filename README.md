@@ -13,7 +13,7 @@ As you can see, it's a [RequireJS](http://requirejs.org/) module written in [Cof
 Extensible
 ----------
 
-It works with whatever units and dimensions are specified in conversions.coffee.  Feel free to add your own, like grams (mass), bytes (digital_space), hertz (cycles), degrees celsius (temperature), etc.  I'll add more soon too.  Unfortunately, there's no support yet for aggregate units like liters that express several dimensions at once.  If you can find a good way to support these, please fork and do so!
+It works with whatever units and dimensions are specified in dimensions.coffee.  Feel free to add your own, like grams (mass), bytes (digital_space), hertz (cycles), degrees celsius (temperature), etc.  I'll add more soon too.  Unfortunately, there's no support yet for aggregate units like liters that express several dimensions at once.  If you can find a good way to support these, please fork and do so!
 
 Accuracy
 --------
